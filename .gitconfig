@@ -1,0 +1,22 @@
+[user]
+	name = steff
+	email = steffen.eriksen@somemail.com
+[core]
+	safecrlf = false
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	last = log -1 HEAD
+	lastp = log -1 HEAD --pretty=oneline
+	lastp5 = log -5 HEAD --pretty=oneline
+	last5 = log -5 HEAD
+	ac = !git add . && git commit -am
+	rao = remote add origin
+	pushitgood = push -u origin --all
+	fs = !git fetch && git status
+	dad = !curl -s https://icanhazdadjoke.com/ && git add
+	pushup = push --set-upstream origin
+
+
