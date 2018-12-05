@@ -18,5 +18,7 @@
 	fs = !git fetch && git status
 	dad = !curl -s https://icanhazdadjoke.com/ && git add
 	pushup = push --set-upstream origin
+	getdev = !git checkout -b develop && git branch --set-upstream-to=origin/develop develop
+	initdev = !git checkout -b develop && git push --set-upstream origin develop
 
 
