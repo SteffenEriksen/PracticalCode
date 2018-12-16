@@ -1,0 +1,38 @@
+		public static AuthenticationResult GetToken(string tenantName, string resourceUrl)
+		{
+			try
+			{
+				var authContext = new AuthenticationContext($"https://login.microsoftonline.com/{tenantName}.onmicrosoft.com");
+
+				var appRegId = ConfigurationManager.AppSettings["AppRegId"];
+				var appRegSecret = ConfigurationManager.AppSettings["AppRegSecret"];
+				var credential = new ClientCredential(appRegId, appRegSecret);
+
+				var result = authContext.AcquireTokenAsync(resourceUrl, credential).Result;
+				return result;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+
+		public static AuthenticationResult GetTokenForCrm(string tenantName)
+		{
+			try
+			{
+				var authContext = new AuthenticationContext($"https://login.microsoftonline.com/{tenantName}.onmicrosoft.com");
+
+				var appRegId = ConfigurationManager.AppSettings["AppRegId"];
+				var appRegSecret = ConfigurationManager.AppSettings["AppRegSecret"];
+				var credential = new ClientCredential(appRegId, appRegSecret);
+
+				var result = authContext.AcquireTokenAsync(ConfigurationManager.AppSettings[" "], credential).Result;
+				return result;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
