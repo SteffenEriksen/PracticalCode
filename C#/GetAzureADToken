@@ -28,7 +28,7 @@
 				var appRegSecret = ConfigurationManager.AppSettings["AppRegSecret"];
 				var credential = new ClientCredential(appRegId, appRegSecret);
 
-				var result = authContext.AcquireTokenAsync(ConfigurationManager.AppSettings[" "], credential).Result;
+				var result = authContext.AcquireTokenAsync(ConfigurationManager.AppSettings["CrmResourceUrl"], credential).Result;
 				return result;
 			}
 			catch (Exception)
