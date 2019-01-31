@@ -1,11 +1,11 @@
 public class FileHelper
     {
 
-        public static void SaveToFile<T>(List<T> items) 
+        public static void SaveToFile<T>(T item, string filename)
         {
-            using (FileStream fs = new FileStream("bankAccounts.txt", FileMode.Create))
+            using (FileStream fs = File.Create($"{filename}.txt"))
             {
-                var ser = JsonConvert.SerializeObject(items);
+                var ser = JsonConvert.SerializeObject(item);
 
                 byte[] info = new UTF8Encoding(true).GetBytes(ser);
                 fs.Write(info, 0, info.Length);
