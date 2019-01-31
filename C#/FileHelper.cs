@@ -16,7 +16,7 @@ public class FileHelper
         {
             foreach(var item in items)
             {
-                using (FileStream fs = new FileStream($"{item.ToString()}.txt", FileMode.Create))
+                using (FileStream fs = new FileStream($"{nameof(T)}_{Guid.NewGuid()}.txt", FileMode.Create))
                 {
                     var ser = JsonConvert.SerializeObject(item);
 
