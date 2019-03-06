@@ -12,4 +12,9 @@
         {
             return (10000 * javascriptTicks) + DatetimeMinTimeTicks;
         }
+                
+        public static DateTime ToDateTime(long javascriptTicks)
+        {
+            return new DateTime(ToDateTimeMilliseconds(javascriptTicks));
+        }
     }
