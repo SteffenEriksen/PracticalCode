@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Storage - Session Storage - Clear</title>
+  </head>
+  <body>
+    <script>
+      if (!window.sessionStorage) {
+        document.writeln('No localStorage support in this browser.');
+      }
+      
+      window.sessionStorage.removeItem('prop1');
+      window.sessionStorage.removeItem('prop2');
+      window.sessionStorage.removeItem('prop3');
+
+      // Clear all
+      // window.sessionStorage.clear();
+
+    </script>
+  </body>
+</html>

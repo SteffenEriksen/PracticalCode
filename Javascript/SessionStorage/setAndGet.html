@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Storage - Session Storage - Set and Get</title>
+  </head>
+  <body>
+    <script>
+      if (!window.sessionStorage) {
+        document.writeln('No localStorage support in this browser.');
+      }
+
+      window.sessionStorage.prop1 = 'Here is some value for prop1';
+      document.writeln(`prop1 value: ${window.sessionStorage.prop1} <br>`);
+
+      window.sessionStorage['prop2'] = 'Here is some value for prop2';
+      document.writeln(`prop2 value: ${window.sessionStorage['prop2']} <br>`);
+
+      window.sessionStorage.setItem(
+        'prop3',
+        'Here is some value for prop3'
+      );
+      document.writeln(`prop3 value: ${window.sessionStorage.getItem('prop3')} <br>`);
+    </script>
+  </body>
+</html>
